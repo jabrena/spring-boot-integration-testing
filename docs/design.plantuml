@@ -1,0 +1,9 @@
+@startuml
+
+actor "User"
+
+"User" -> "Spring Boot": GET /gods/greek
+"Spring Boot" -> "my-json-server": GET https://my-json-server.typicode.com/jabrena/latency-problems/greek
+"Spring Boot" <-- "my-json-server": List of greek gods
+"User" <-- "Spring Boot": List of greek gods
+@enduml
