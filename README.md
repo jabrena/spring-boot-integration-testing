@@ -1,5 +1,18 @@
 # Spring Boot Integration Testing
 
+<div hidden>
+```
+@startuml firstDiagram
+
+Alice -> Bob: Hello
+Bob -> Alice: Hi!
+		
+@enduml
+```
+</div>
+
+![](firstDiagram.svg)
+
 ## How to build in local
 
 ```bash
@@ -13,3 +26,5 @@ sdk env install
 ## References
 
 - https://martinfowler.com/bliki/IntegrationTest.html
+- https://plantuml.com/es/
+- https://real-world-plantuml.com/
