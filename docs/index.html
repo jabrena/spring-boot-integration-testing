@@ -4,11 +4,13 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Unit Testing vs Integration Testing</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
 		<link rel="stylesheet" href="dist/theme/white.css">
+
+		<link rel="icon" href="images/java-icon.png" type="image/png" />
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -28,7 +30,9 @@
 						</span>
 					</p>
                     <p>
-                        <a href="https://twitter.com/juanantoniobm" target="_blank">@juanantoniobm</a>
+						<span style="display: inline-block; color: black;  background: #fff;">
+                        	<a href="https://twitter.com/juanantoniobm" target="_blank">@juanantoniobm</a>
+						</span>
                     </p>
                 </section>
 				<section data-background-image="./images/waves-bg3.jpg">
@@ -66,18 +70,46 @@
 				<section>
 					<h2>Agenda</h2>
 					<ul>
+						<li>Testing in the SLDC</li>
+						<li>Concepts</li>
 						<li>Unit testing</li>
 						<li>Integration testing</li>
 						<li>Shapes of pyramids of testing</li>
-						<li>Checklist</li>
+						<li>Testing and Generative AI</li>
 						<li>Live code demo</li>
 					</ul>
+				</section>
+				<section>
+					<h2>Testing in the SLDC</h2>
+					<p>
+						Approximately 40-50% of the total software development project lifecycle cost involves testing, 
+						which is in line with industry software cost models.
+					</p>
+					Tim Crumbley (NASA)
+					<hr />
+					<p><strong>Question:</strong> Do you invest half your Sprint time in testing?</p>
+				</section>
+				<section>
+					<section>
+						<ul>
+							<li>Unit: Test 1 thing, alone</li>
+							<li>Integration: Test a few things, together</li>
+							<li>End-to-end (E2E): Test that everything works together (run the app)</li>
+						</ul>
+
+					</section>
 				</section>
 				<section>
 					<section>
 						<h2>Unit testing</h2>
 						<img src="./images/unit-test.png" width="50%" />
 						<small><strong>Source: </strong><a href="https://martinfowler.com/bliki/UnitTest.html" target="_blank">https://martinfowler.com/bliki/UnitTest.html</a></small>
+					</section>
+					<section>
+						<h2>Unit testing</h2>
+						<p>
+							Unit testing is a type of software testing where individual units or components of a software are tested. The purpose of unit testing is to validate that each unit of the software performs as expected.
+						</p>
 					</section>
 				</section>
 				<section>
@@ -86,6 +118,22 @@
 						<img src="./images/integration-testing.png" width="80%" />
 						<small><strong>Source: </strong><a href="https://katalon.com/resources-center/blog/integration-testing" target="_blank">https://katalon.com/resources-center/blog/integration-testing</a></small>
 					</section>
+					<section>
+						<h2>Integration testing</h2>
+						<p>
+							Integration testing is a type of software testing where the software is tested as a whole, to ensure that the different parts of the software work together as expected.
+						</p>
+						<p>
+							Integration tests test the plumbing and choreography of the components. (Uncle Bob Martin)
+						</p>
+					</section>
+				</section>
+				<section>
+					<h2>Shapes of pyramids of testing</h2>
+				</section>
+				<section>
+					<h2>Testing and Generative AI</h2>
+					<img src="./images/refactor-me-monster-comic.png" width="70%" />
 				</section>
 				<section>
 					<img src="./images/demo-time.png" width="30%" />
