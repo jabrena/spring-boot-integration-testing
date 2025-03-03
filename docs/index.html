@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                <section data-background-image="./images/waves-bg4.webp">
+					<h2>
+						<span style="display: inline-block; color: black;  background: #DFFF6D;">
+							Unit Testing vs Integration Testing
+						</span>
+					</h2>
+					<p>
+						<span style="display: inline-block; color: black;  background: #DFFF6D;">
+							Together but not mixed
+						</span>
+					</p>
+                    <p>
+                        <a href="https://twitter.com/juanantoniobm" target="_blank">@juanantoniobm</a>
+                    </p>
+                </section>
+				<section data-background-image="./images/waves-bg3.jpg">
+					<section>
+						<blockquote style="background-color: white;">
+							"Quality is never an accident; it is always the result of intelligent effort."
+							<br />- John Ruskin
+						</blockquote>
+					</section>
+					<section>
+						<blockquote style="background-color: white;">
+							“Program testing can be used to show the presence of bugs, but never to show their absence!”
+							<br />- Edsger W. Dijkstra
+						</blockquote>
+					</section>
+					<section>
+						<blockquote style="background-color: white;">
+							“Discovering the unexpected is more important than confirming the known.” 
+							<br />- George E. P. Box
+						</blockquote>
+					</section>
+					<section>
+						<blockquote style="background-color: white;">
+							"Quality is not an act, it is a habit." 
+							<br />- Aristotle
+						</blockquote>
+					</section>
+					<section>
+						<blockquote style="background-color: white;">
+							“If you're not failing, you're not trying hard enough.”
+							<br />- Martin Fowler
+						</blockquote>
+					</section>
+				</section>
+				<section>
+					<h2>Agenda</h2>
+					<ul>
+						<li>Unit testing</li>
+						<li>Integration testing</li>
+						<li>Shapes of pyramids of testing</li>
+						<li>Checklist</li>
+						<li>Live code demo</li>
+					</ul>
+				</section>
+				<section>
+					<section>
+						<h2>Unit testing</h2>
+						<img src="./images/unit-test.png" width="50%" />
+						<small><strong>Source: </strong><a href="https://martinfowler.com/bliki/UnitTest.html" target="_blank">https://martinfowler.com/bliki/UnitTest.html</a></small>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Integration testing</h2>
+						<img src="./images/integration-testing.png" width="80%" />
+						<small><strong>Source: </strong><a href="https://katalon.com/resources-center/blog/integration-testing" target="_blank">https://katalon.com/resources-center/blog/integration-testing</a></small>
+					</section>
+				</section>
+				<section>
+					<img src="./images/demo-time.png" width="30%" />
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
