@@ -31,6 +31,7 @@ jwebserver -p 8080 -d "$(pwd)/docs/"
 - https://martinfowler.com/tags/extreme%20programming.html
 - https://martinfowler.com/bliki/IntegrationTest.html
 - https://kentcdodds.com/blog/the-testing-trophy-and-testing-classifications
+- https://engineering.atspotify.com/2018/01/testing-of-microservices/
 - https://x.com/randal_olson/status/799707563860299776
 - https://x.com/erinfranmc/status/1148986961207730176
 - https://kentcdodds.com/blog/write-tests
