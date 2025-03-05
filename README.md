@@ -32,6 +32,7 @@ jwebserver -p 8080 -d "$(pwd)/docs/"
 - https://martinfowler.com/bliki/IntegrationTest.html
 - https://microsoft.github.io/code-with-engineering-playbook/automated-testing/unit-testing/mocking/
 - https://kentcdodds.com/blog/the-testing-trophy-and-testing-classifications
+- https://engineering.atspotify.com/2018/01/testing-of-microservices/
 - https://x.com/randal_olson/status/799707563860299776
 - https://x.com/erinfranmc/status/1148986961207730176
 - https://kentcdodds.com/blog/write-tests

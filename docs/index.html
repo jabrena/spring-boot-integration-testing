@@ -71,7 +71,6 @@
 					<h2>Agenda</h2>
 					<ul>
 						<li>Testing in the SLDC</li>
-						<li>Concepts</li>
 						<li>Unit testing</li>
 						<li>Integration testing</li>
 						<li>Shapes of pyramids of testing</li>
@@ -80,23 +79,26 @@
 					</ul>
 				</section>
 				<section>
-					<h2>Testing in the SLDC</h2>
-					<p>
-						Approximately 40-50% of the total software development project lifecycle cost involves testing, 
-						which is in line with industry software cost models.
-					</p>
-					Tim Crumbley (NASA)
-					<hr />
-					<p><strong>Question:</strong> Do you invest half your Sprint time in testing?</p>
-				</section>
-				<section>
 					<section>
-						<ul>
-							<li>Unit: Test 1 thing, alone</li>
-							<li>Integration: Test a few things, together</li>
-							<li>End-to-end (E2E): Test that everything works together (run the app)</li>
-						</ul>
-
+						<h2>Testing in the SLDC</h2>
+						<img src="./images/SDLC.webp" width="40%" />
+					</section>
+					<section>
+						<h2>Testing in the SLDC</h2>
+						<p>
+							<strong>Questions for the audience:</strong>
+						</p>
+						<p> 
+							What is the percentage of your time invested in testing in a Sprint?
+						</p>
+					</section>
+					<section>
+						<h2>Testing in the SLDC</h2>
+						<p>
+							Approximately 40-50% of the total software development project lifecycle cost involves testing, 
+							which is <strong><u>in line with industry software cost models</u></strong>.
+						</p>
+						Tim Crumbley (NASA)
 					</section>
 				</section>
 				<section>
@@ -111,6 +113,14 @@
 							Unit testing is a type of software testing where individual units or components of a software are tested. The purpose of unit testing is to validate that each unit of the software performs as expected.
 						</p>
 					</section>
+					<section>
+						<h2>Concepts</h2>
+						<ul>
+							<li>Mocks</li>
+							<li>Stubs</li>
+							<li>Spies</li>
+						</ul>
+					</section>
 				</section>
 				<section>
 					<section>
@@ -120,16 +130,26 @@
 					</section>
 					<section>
 						<h2>Integration testing</h2>
+						<blockquote>
+							Integration tests test the plumbing and choreography of the components. 
+							<br />
+							- Uncle Bob Martin
+						</blockquote>
+					</section>
+					<section>
+						<h2>Integration testing</h2>
 						<p>
 							Integration testing is a type of software testing where the software is tested as a whole, to ensure that the different parts of the software work together as expected.
-						</p>
-						<p>
-							Integration tests test the plumbing and choreography of the components. (Uncle Bob Martin)
 						</p>
 					</section>
 				</section>
 				<section>
 					<h2>Shapes of pyramids of testing</h2>
+					<ul>
+						<li>Unit: Test 1 thing, alone</li>
+						<li>Integration: Test a few things, together</li>
+						<li>End-to-end (E2E): Test that everything works together (run the app)</li>
+					</ul>
 				</section>
 				<section>
 					<h2>Testing and Generative AI</h2>
@@ -146,14 +166,24 @@
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
 		<script>
+			Reveal.configure({ slideNumber: true });
+			Reveal.configure({ slideNumber: 'c/t' });
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
 			// - https://revealjs.com/config/
 			Reveal.initialize({
+				controls: true,
+				controlsLayout: 'bottom-right',
+				progress: true,
+				center: true,
 				hash: true,
-
+				touch: true,
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				slideNumber: true,
+				showSlideNumber: 'all',
+	
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
 			});
 		</script>
 	</body>
