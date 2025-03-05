@@ -71,7 +71,8 @@
 					<h2>Agenda</h2>
 					<ul>
 						<li>Testing in the SLDC</li>
-						<li>Unit testing</li>
+						<li>Unit testing</li>	
+						<li>What problem solve we try to solve?</li>
 						<li>Integration testing</li>
 						<li>Shapes of pyramids of testing</li>
 						<li>Testing and Generative AI</li>
@@ -103,6 +104,13 @@
 				</section>
 				<section>
 					<section>
+						<h2>What problem solve we try to solve?</h2>
+						<img src="./images/spring-cloud-contract1.png" width="50%" />
+						<small><strong>Source: </strong><a href="https://docs.spring.io/spring-cloud-contract/reference/getting-started/introducing-spring-cloud-contract.html" target="_blank">https://docs.spring.io/spring-cloud-contract/reference/getting-started/introducing-spring-cloud-contract.html</a></small>
+					</section>
+				</section>
+				<section>
+					<section>
 						<h2>Unit testing</h2>
 						<img src="./images/unit-test.png" width="50%" />
 						<small><strong>Source: </strong><a href="https://martinfowler.com/bliki/UnitTest.html" target="_blank">https://martinfowler.com/bliki/UnitTest.html</a></small>
@@ -116,10 +124,10 @@
 					<section>
 						<h2>Concepts</h2>
 						<ul>
-							<li>Mocks</li>
-							<li>Stubs</li>
-							<li>Spies</li>
+							<li><strong>Mocks: </strong>Mocking is the practice of creating simulated versions of the objects in the code, and then using these mock objects to mimic the behavior of the real objects or services so that we can test parts of the code in isolation.</li>
+							<li><strong>Stubs: </strong>A stub is a test double that returns a configured response every time when an expected interaction happens between the system under test and a stub. </li>
 						</ul>
+						<strong>Article: </strong><a href="https://martinfowler.com/articles/mocksArentStubs.html" target="_blank">Mocks Aren't Stubs</a>
 					</section>
 				</section>
 				<section>
@@ -142,18 +150,84 @@
 							Integration testing is a type of software testing where the software is tested as a whole, to ensure that the different parts of the software work together as expected.
 						</p>
 					</section>
+					<section>
+						<h2>Integration testing</h2>
+						<img src="images/mockito-made-clear.jpg" width="30%" />
+						<small><strong>Source: </strong><a href="https://pragprog.com/titles/mockito/mockito-made-clear/" target="_blank">https://pragprog.com/titles/mockito/mockito-made-clear/</a></small>
+					</section>
+					<section>
+						<h2>Integration testing</h2>
+						<p>
+							<strong>Questions for the audience:</strong>
+						</p>
+						<p> 
+							When is better not not use Mocks and it is better to create an Integration test?
+						</p>
+					</section>
+					<section>
+						<h2>Integration testing</h2>
+						<table>
+							<thead>
+								<tr>
+									<td>Service</td>
+									<td>Solution</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>HTTP</td>
+									<td>WireMock</td>
+								</tr>
+								<tr>
+									<td>Database</td>
+									<td>TestContainers</td>
+								</tr>
+								<tr>
+									<td>Broker</td>
+									<td>TestContainers</td>
+								</tr>
+							</tbody>
+						</table>
+						<strong>Further information: </strong><a href="https://www.testcontainers.org/" target="_blank">https://www.testcontainers.org/</a>
+					</section>
 				</section>
 				<section>
-					<h2>Shapes of pyramids of testing</h2>
-					<ul>
-						<li>Unit: Test 1 thing, alone</li>
-						<li>Integration: Test a few things, together</li>
-						<li>End-to-end (E2E): Test that everything works together (run the app)</li>
-					</ul>
+					<section>
+						<h2>Shapes of pyramids of testing</h2>
+						<img src="./images/traditional-testing-pyramid.png" width="40%" />
+						<small><strong>Source: </strong><a href="https://engineering.atspotify.com/2018/01/testing-of-microservices/" target="_blank">https://engineering.atspotify.com/2018/01/testing-of-microservices/</a></small>
+					</section>
+					<section>
+						<h2>Shapes of pyramids of testing</h2>
+						<img src="./images/microservice-testing-honeycomb.png" width="40%" />
+						<small><strong>Source: </strong><a href="https://engineering.atspotify.com/2018/01/testing-of-microservices/" target="_blank">https://engineering.atspotify.com/2018/01/testing-of-microservices/</a></small>
+					</section>
+					<section>
+						<h2>Shapes of pyramids of testing</h2>
+						<img src="./images/guillermo-rauch.png" width="50%" />
+					</section>
+					<section>
+						<h2>Shapes of pyramids of testing</h2>
+						<h3>Notes:</h3>
+						<ul>
+							<li>Unit: Test 1 thing, alone</li>
+							<li>Integration: Test a few things, together</li>
+							<li>End-to-end (E2E): Test that everything works together (run the app)</li>
+						</ul>
+					</section>
 				</section>
 				<section>
-					<h2>Testing and Generative AI</h2>
-					<img src="./images/refactor-me-monster-comic.png" width="70%" />
+					<section>
+						<h2>Testing and Generative AI</h2>
+						<img src="./images/refactor-me-monster-comic.png" width="70%" />
+
+						<small><strong>Source: </strong><a href="https://martinfowler.com/articles/engineering-practices-llm.html" target="_blank">https://martinfowler.com/articles/engineering-practices-llm.html</a></small>
+					</section>
+					<section>
+						<h2>Testing and Generative AI</h2>
+						<img src="./images/ai-code.png" width="70%" />
+						<small><strong>Source: </strong><a href="https://www.gitclear.com/ai_assistant_code_quality_2025_research" target="_blank">https://www.gitclear.com/ai_assistant_code_quality_2025_research</a></small>
+					</section>
 				</section>
 				<section>
 					<img src="./images/demo-time.png" width="30%" />
