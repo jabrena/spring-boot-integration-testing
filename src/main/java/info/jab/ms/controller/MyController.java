@@ -10,8 +10,11 @@ import java.util.List;
 @RestController
 public class MyController {
 
-    @Autowired
-    private MyService myService;
+    private final MyService myService;
+
+    public MyController(MyService myService) {
+        this.myService = myService;
+    }
 
     @GetMapping("/gods/greek")
     List<String> getGreekGods() {
