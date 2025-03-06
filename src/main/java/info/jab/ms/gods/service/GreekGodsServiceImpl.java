@@ -1,8 +1,7 @@
-package info.jab.ms.service;
+package info.jab.ms.gods.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
@@ -13,18 +12,21 @@ import org.springframework.web.client.RestTemplate;
 import java.util.List;
 
 @Service
-public class MyServiceImpl implements MyService {
+public class GreekGodsServiceImpl implements GreekGodsService {
 
-    private static Logger logger = LoggerFactory.getLogger(MyServiceImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(GreekGodsServiceImpl.class);
 
     @Value("${address}")
     private String address;
 
-    @Autowired
-    private RestTemplate restTemplate;
+    private final RestTemplate restTemplate;
+
+    public GreekGodsServiceImpl(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
 
     @Override
-    public List<String> getData() {
+    public List<String> getGreekGods() {
         logger.info(address);
 
         ResponseEntity<List<String>> result =
@@ -37,4 +39,4 @@ public class MyServiceImpl implements MyService {
 
         return result.getBody();
     }
-}
+} 

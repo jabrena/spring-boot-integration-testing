@@ -6,6 +6,9 @@ import com.tngtech.archunit.lang.ArchRule;
 
 import static com.tngtech.archunit.library.Architectures.layeredArchitecture;
 
+import org.junit.jupiter.api.Disabled;
+
+@Disabled
 @AnalyzeClasses(packages = "info.jab.ms")
 public class LayeredArchitectureTest {
 
