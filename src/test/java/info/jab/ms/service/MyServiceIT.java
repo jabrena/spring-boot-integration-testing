@@ -19,7 +19,7 @@ import java.util.List;
     properties = {
         "address=http://localhost:8090/greek-gods"
     })
-public class MyServiceITTest {
+public class MyServiceIT {
 
     @Autowired
     private MyService myService;
