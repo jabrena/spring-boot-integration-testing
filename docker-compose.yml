@@ -1,6 +1,6 @@
 services:
   wiremock:
-    image: wiremock/wiremock:2.35.0-1
+    image: wiremock/wiremock:3.5.4
     command: --port 8000
     ports:
       - 8000:8000
