@@ -1,4 +1,4 @@
-# Spring Boot Integration Testing
+# Be or not to be a Pyramid of Testing
 
 This repository show the advantages to add integrations tests in favor of Unit tests with Mocks.
 

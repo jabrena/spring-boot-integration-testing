@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Unit Testing vs Integration Testing</title>
+		<title>Be or not to be a Pyramid of Testing</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -15,23 +15,38 @@
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 	</head>
-	<body>
+	<body>	
 		<div class="reveal">
+			<!-- Footer -->
+			<style>
+				.footer {
+					position: absolute;
+					left: 10px;
+					bottom: 0px;
+					z-index: 999;
+				}
+			</style>
+
+			<div class="footer">
+				<small><a href="https://twitter.com/juanantoniobm" target="_blank">Twitter: @juanantoniobm</a></small>
+			</div>	
 			<div class="slides">
                 <section data-background-image="./images/waves-bg4.webp">
 					<h2>
 						<span style="display: inline-block; color: black;  background: #DFFF6D;">
-							Unit Testing vs Integration Testing
+							Be or not to be<br/> a pyramid of testing
 						</span>
 					</h2>
+					<!--
 					<p>
 						<span style="display: inline-block; color: black;  background: #DFFF6D;">
-							Together but not mixed
+							
 						</span>
 					</p>
+					-->
                     <p>
 						<span style="display: inline-block; color: black;  background: #fff;">
-                        	<a href="https://twitter.com/juanantoniobm" target="_blank">@juanantoniobm</a>
+                        	<a href="https://twitter.com/juanantoniobm" target="_blank">Juan Antonio Breña Moral</a>
 						</span>
                     </p>
                 </section>
@@ -71,12 +86,13 @@
 					<h2>Agenda</h2>
 					<ul>
 						<li>Testing in the SLDC</li>
-						<li>Unit testing</li>	
-						<li>What problem solve we try to solve?</li>
-						<li>Integration testing</li>
+						<li>What is Testing value?</li>
 						<li>Shapes of pyramids of testing</li>
+						<li>Types of software testing</li>
 						<li>Testing and Generative AI</li>
 						<li>Live code demo</li>
+						<li>References</li>
+						<li>Q&A</li>
 					</ul>
 				</section>
 				<section>
@@ -104,40 +120,88 @@
 				</section>
 				<section>
 					<section>
+						<h2>What is Testing value?</h2>
+						<p>
+							The value of testing really boils down to:
+						</p>
+						<ul>
+							<li>Bugs</li>
+							<li>Runtime issues</li>
+							<li>Quality/Risk Assessment</li>
+							<li>Requirement validation</li>
+						</ul>
+					</section>
+					<!--
+					<section>
 						<h2>What problem solve we try to solve?</h2>
 						<img src="./images/spring-cloud-contract1.png" width="50%" />
 						<small><strong>Source: </strong><a href="https://docs.spring.io/spring-cloud-contract/reference/getting-started/introducing-spring-cloud-contract.html" target="_blank">https://docs.spring.io/spring-cloud-contract/reference/getting-started/introducing-spring-cloud-contract.html</a></small>
 					</section>
+					-->
 				</section>
 				<section>
 					<section>
-						<h2>Unit testing</h2>
+						<h2>Shapes of pyramids of testing</h2>
+						<img src="./images/traditional-testing-pyramid.png" width="40%" />
+						<small><strong>Source: </strong><a href="https://engineering.atspotify.com/2018/01/testing-of-microservices/" target="_blank">https://engineering.atspotify.com/2018/01/testing-of-microservices/</a></small>
+					</section>
+					<section>
+						<h2>Shapes of pyramids of testing</h2>
+						<img src="./images/guillermo-rauch.png" width="50%" />
+					</section>
+					<section>
+						<h2>Shapes of pyramids of testing</h2>
+						<img src="./images/microservice-testing-honeycomb.png" width="40%" />
+						<small><strong>Source: </strong><a href="https://engineering.atspotify.com/2018/01/testing-of-microservices/" target="_blank">https://engineering.atspotify.com/2018/01/testing-of-microservices/</a></small>
+					</section>
+					<section>
+						<h2>Shapes of pyramids of testing</h2>
+						<ul>
+							<li>Unit: Test 1 thing, alone</li>
+							<li>Integration: Test a few things, together</li>
+							<li>End-to-end (E2E): Test that everything works together (run the app)</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Types of software testing</h2>
+						<h3>Unit testing</h3>
 						<img src="./images/unit-test.png" width="50%" />
 						<small><strong>Source: </strong><a href="https://martinfowler.com/bliki/UnitTest.html" target="_blank">https://martinfowler.com/bliki/UnitTest.html</a></small>
 					</section>
 					<section>
-						<h2>Unit testing</h2>
+						<h2>Types of software testing</h2>
+						<h3>Unit testing</h3>
 						<p>
 							Unit testing is a type of software testing where individual units or components of a software are tested. The purpose of unit testing is to validate that each unit of the software performs as expected.
 						</p>
 					</section>
 					<section>
-						<h2>Concepts</h2>
+						<h2>Types of software testing</h2>
+						<h3>Concepts</h3>
 						<ul>
 							<li><strong>Mocks: </strong>Mocking is the practice of creating simulated versions of the objects in the code, and then using these mock objects to mimic the behavior of the real objects or services so that we can test parts of the code in isolation.</li>
+						</ul>
+						<strong>Interesting article: </strong><a href="https://martinfowler.com/articles/mocksArentStubs.html" target="_blank">Mocks Aren't Stubs</a>
+					</section>
+					<section>
+						<h2>Types of software testing</h2>
+						<h3>Concepts</h3>
+						<ul>
 							<li><strong>Stubs: </strong>A stub is a test double that returns a configured response every time when an expected interaction happens between the system under test and a stub. </li>
 						</ul>
-						<strong>Article: </strong><a href="https://martinfowler.com/articles/mocksArentStubs.html" target="_blank">Mocks Aren't Stubs</a>
+						<strong>Interesting article: </strong><a href="https://martinfowler.com/articles/mocksArentStubs.html" target="_blank">Mocks Aren't Stubs</a>
 					</section>
-				</section>
-				<section>
 					<section>
-						<h2>Integration testing</h2>
+						<h2>Types of software testing</h2>
+						<h3>Integration testing</h3>
 						<img src="./images/integration-testing.png" width="80%" />
 						<small><strong>Source: </strong><a href="https://katalon.com/resources-center/blog/integration-testing" target="_blank">https://katalon.com/resources-center/blog/integration-testing</a></small>
 					</section>
 					<section>
-						<h2>Integration testing</h2>
+						<h2>Types of software testing</h2>
+						<h3>Integration testing</h3>
 						<blockquote>
 							Integration tests test the plumbing and choreography of the components. 
 							<br />
@@ -145,18 +209,21 @@
 						</blockquote>
 					</section>
 					<section>
-						<h2>Integration testing</h2>
+						<h2>Types of software testing</h2>
+						<h3>Integration testing</h3>
 						<p>
 							Integration testing is a type of software testing where the software is tested as a whole, to ensure that the different parts of the software work together as expected.
 						</p>
 					</section>
 					<section>
-						<h2>Integration testing</h2>
+						<h2>Types of software testing</h2>
+						<h3>Integration testing</h3>
 						<img src="images/mockito-made-clear.jpg" width="30%" />
 						<small><strong>Source: </strong><a href="https://pragprog.com/titles/mockito/mockito-made-clear/" target="_blank">https://pragprog.com/titles/mockito/mockito-made-clear/</a></small>
 					</section>
 					<section>
-						<h2>Integration testing</h2>
+						<h2>Types of software testing</h2>
+						<h3>Integration testing</h3>
 						<p>
 							<strong>Questions for the audience:</strong>
 						</p>
@@ -165,7 +232,8 @@
 						</p>
 					</section>
 					<section>
-						<h2>Integration testing</h2>
+						<h2>Types of software testing</h2>
+						<h3>Integration testing</h3>
 						<table>
 							<thead>
 								<tr>
@@ -193,31 +261,6 @@
 				</section>
 				<section>
 					<section>
-						<h2>Shapes of pyramids of testing</h2>
-						<img src="./images/traditional-testing-pyramid.png" width="40%" />
-						<small><strong>Source: </strong><a href="https://engineering.atspotify.com/2018/01/testing-of-microservices/" target="_blank">https://engineering.atspotify.com/2018/01/testing-of-microservices/</a></small>
-					</section>
-					<section>
-						<h2>Shapes of pyramids of testing</h2>
-						<img src="./images/microservice-testing-honeycomb.png" width="40%" />
-						<small><strong>Source: </strong><a href="https://engineering.atspotify.com/2018/01/testing-of-microservices/" target="_blank">https://engineering.atspotify.com/2018/01/testing-of-microservices/</a></small>
-					</section>
-					<section>
-						<h2>Shapes of pyramids of testing</h2>
-						<img src="./images/guillermo-rauch.png" width="50%" />
-					</section>
-					<section>
-						<h2>Shapes of pyramids of testing</h2>
-						<h3>Notes:</h3>
-						<ul>
-							<li>Unit: Test 1 thing, alone</li>
-							<li>Integration: Test a few things, together</li>
-							<li>End-to-end (E2E): Test that everything works together (run the app)</li>
-						</ul>
-					</section>
-				</section>
-				<section>
-					<section>
 						<h2>Testing and Generative AI</h2>
 						<img src="./images/refactor-me-monster-comic.png" width="70%" />
 
@@ -227,6 +270,15 @@
 						<h2>Testing and Generative AI</h2>
 						<img src="./images/ai-code.png" width="70%" />
 						<small><strong>Source: </strong><a href="https://www.gitclear.com/ai_assistant_code_quality_2025_research" target="_blank">https://www.gitclear.com/ai_assistant_code_quality_2025_research</a></small>
+					</section>
+					<section>
+						<h2>Testing and Generative AI</h2>
+						<img src="./images/agile.png" width="50%" />
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>References</h2>
 					</section>
 				</section>
 				<section>
