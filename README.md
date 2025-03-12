@@ -1,4 +1,4 @@
-# Spring Boot Integration Testing
+# Be or not to be a Pyramid of Testing
 
 This repository show the advantages to add integrations tests in favor of Unit tests with Mocks.
 
@@ -11,9 +11,11 @@ This repository show the advantages to add integrations tests in favor of Unit t
 ```bash
 sdk env install
 ./mvnw clean verify
+./mvnw clean verify surefire-report:report
 ./mvnw dependency:tree
 ./mvnw clean spring-boot:run
-./mvnw clean spring-boot:run -Dspring-boot.run.profiles=ko
+./mvnw clean spring-boot:run -Dspring-boot.run.profiles=ok
+./mvnw clean spring-boot:run -Dspring-boot.run.profiles=local
 curl "http://localhost:8080/gods/greek"
 
 ./mvnw versions:display-dependency-updates

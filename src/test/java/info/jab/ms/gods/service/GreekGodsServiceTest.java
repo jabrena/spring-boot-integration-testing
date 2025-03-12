@@ -1,4 +1,4 @@
-package info.jab.ms.service;
+package info.jab.ms.gods.service;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -15,22 +15,22 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class MyServiceTest {
+class GreekGodsServiceTest {
 
     @Mock
-    private MyService myService;
+    private GreekGodsService greekGodsService;
 
     @Test
-    void should_return_data_when_get_data() throws IOException {
+    void should_return_data_when_get_greek_gods() throws IOException {
         // Given
         List<String> expectedData = Files.readAllLines(
             Paths.get(getClass().getResource("/__files/greek-gods-200.json").getPath()),
             StandardCharsets.UTF_8
         );
-        when(myService.getData()).thenReturn(expectedData);
+        when(greekGodsService.getGreekGods()).thenReturn(expectedData);
 
         // When
-        List<String> result = myService.getData();
+        List<String> result = greekGodsService.getGreekGods();
 
         // Then
         assertThat(result)

@@ -1,4 +1,4 @@
-package info.jab.ms.service;
+package info.jab.ms.gods.service;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
 import org.junit.jupiter.api.AfterEach;
@@ -19,10 +19,10 @@ import java.util.List;
     properties = {
         "address=http://localhost:8090/greek-gods"
     })
-public class MyServiceITTest {
+public class GreekGodsServiceIT {
 
     @Autowired
-    private MyService myService;
+    private GreekGodsService greekGodsService;
 
     WireMockServer wireMockServer;
 
@@ -46,10 +46,10 @@ public class MyServiceITTest {
                         .withBodyFile("greek-gods-200.json")));
 
         //When
-        List<String> result = myService.getData();
+        List<String> result = greekGodsService.getGreekGods();
 
         //Then
         assertThat(result).isNotEmpty();
-        assertThat(result.size()).isEqualTo(20); // ajusta según el contenido de books.json
+        assertThat(result.size()).isEqualTo(20); // adjust according to the content of greek-gods-200.json
     }
-}
+} 

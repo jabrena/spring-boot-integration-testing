@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/api/gods"
+  },
+  "response": {
+    "status": 200,
+    "bodyFileName": "greek-gods-200.json",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+} 

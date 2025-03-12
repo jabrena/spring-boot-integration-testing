@@ -1,4 +1,4 @@
-package info.jab.ms.controller;
+package info.jab.ms.gods.controller;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
 import org.junit.jupiter.api.AfterEach;
