@@ -7,3 +7,17 @@ services:
     volumes:
       - ./src/test/resources/__files:/home/wiremock/__files
       - ./src/test/resources/mappings:/home/wiremock/mappings
+      
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_DB=greekgods
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:

@@ -9,7 +9,7 @@ import static com.tngtech.archunit.library.Architectures.layeredArchitecture;
 import org.junit.jupiter.api.Disabled;
 
 @Disabled
-@AnalyzeClasses(packages = "info.jab.ms")
+@AnalyzeClasses(packages = "info.jab.ms.gods")
 public class LayeredArchitectureTest {
 
     @ArchTest
@@ -17,9 +17,9 @@ public class LayeredArchitectureTest {
             .consideringAllDependencies()
             .layer("Controllers").definedBy("..controller..")
             .layer("Services").definedBy("..service..")
-            //.layer("Persistence").definedBy("..repository..")
+            .layer("Persistence").definedBy("..repository..")
 
             .whereLayer("Controllers").mayNotBeAccessedByAnyLayer()
-            .whereLayer("Services").mayOnlyBeAccessedByLayers("Controllers");
-            //.whereLayer("Persistence").mayOnlyBeAccessedByLayers("Services");
+            .whereLayer("Services").mayOnlyBeAccessedByLayers("Controllers")
+            .whereLayer("Persistence").mayOnlyBeAccessedByLayers("Services");
 }

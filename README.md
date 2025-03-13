@@ -12,6 +12,8 @@ This repository show the advantages to add integrations tests in favor of Unit t
 sdk env install
 ./mvnw clean verify
 ./mvnw clean verify surefire-report:report
+./mvnw clean verify jacoco:report
+jwebserver -p 8000 -d "$(pwd)/target/site/"
 ./mvnw dependency:tree
 ./mvnw clean spring-boot:run
 ./mvnw clean spring-boot:run -Dspring-boot.run.profiles=ok
