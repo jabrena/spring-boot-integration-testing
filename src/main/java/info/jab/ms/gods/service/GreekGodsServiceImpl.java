@@ -12,10 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 @Service
 public class GreekGodsServiceImpl implements GreekGodsService {
@@ -58,7 +55,7 @@ public class GreekGodsServiceImpl implements GreekGodsService {
             // Create and save GreekGod entities
             List<GreekGod> gods = godNames.stream()
                     .map(GreekGod::new)
-                    .collect(Collectors.toList());
+                    .toList();
             
             greekGodRepository.saveAll(gods);
         }
@@ -70,7 +67,6 @@ public class GreekGodsServiceImpl implements GreekGodsService {
     @Transactional(readOnly = true)
     public List<GreekGod> getAllGodsFromDatabase() {
         logger.info("Retrieving all Greek gods from the database");
-        return StreamSupport.stream(greekGodRepository.findAll().spliterator(), false)
-                .collect(Collectors.toList());
+        return greekGodRepository.findAll();
     }
 } 
