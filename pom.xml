@@ -19,7 +19,6 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <java.version>23</java.version>
-    <jacoco.skip>true</jacoco.skip>
   </properties>
 
   <dependencies>
