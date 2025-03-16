@@ -53,11 +53,11 @@
 								<a href="https://twitter.com/juanantoniobm" target="_blank">Juan Antonio Breña Moral</a>
 							</span>
 						</p>
-					</section>
+					</section>				
 					<section>
 						<small>
 							<blockquote>
-								The "To be or not to be" soliloquy appears in Act 3, Scene 1 of Shakespeare’s Hamlet. 
+								The "To be or not to be" soliloquy appears in Act 3, Scene 1 of Shakespeare's Hamlet. 
 								<br />
 								In this scene, often called the "nunnery scene," Prince Hamlet thinks about life, death, and suicide. 
 								<br />
@@ -67,13 +67,49 @@
 						</small>
 						<p>
 							<strong>
-								How to live with the lack of testing?
+								How to live an agony with the lack of testing?
 								<br/>
 								This is the question...
 							</strong>
 						</p>
 					</section>
 				</section>
+				<section align="left" data-background="#ffd7b5"><!-- data-background="./images/innovation.jpg" -->
+					<h2 align="center">Who I am</h2>
+					<table>
+						<tr>
+							<td>
+								<img src="./images/jabAvatar.jpg" width="100%" />
+							</td>
+							<td style="color: #336699; vertical-align: top">
+								Juan Antonio Breña Moral<br />
+								Technical Product Owner for Shared Platform @ Atradius CIO
+								<!--, 
+								Footballitics, 
+								Novag Chess user
+								-->
+								<br />
+								<a target="_blank" href="https://twitter.com/juanantoniobm">Twitter</a> |
+								<a target="_blank" href="https://github.com/jabrena">Github</a></li> |
+								<a target="_blank" href="https://www.linkedin.com/in/juanantoniobrenamoral">Linkedin</a>
+							</td>
+						</tr>
+						<!--
+						<tr>
+							<td colspan="2" align="center" style="color: #336699;">
+								Purpose: <i>"Riding dragons with innovation & fun"</i>
+							</td>
+						</tr>
+						-->
+						<tr>
+							<td colspan="2" align="center" style="color: #336699;">
+								<strong>Quotes:</strong> <i>“Lead me, follow me, or get out of my way.” <br />"Pressure makes diamonds."</i><br />
+								<i>- George S. Patton Jr.</i>
+							</td>
+						</tr>
+						
+					</table>
+				</section>					
 				<section data-background-image="./images/waves-bg3.jpg">
 					<section>
 						<blockquote style="background-color: white;">
@@ -113,10 +149,13 @@
 				<section>
 					<h2>Agenda</h2>
 					<ul>
+						<li>Who I am</li>
 						<li>Testing in the SLDC</li>
 						<li>Shapes of pyramids of testing</li>
 						<li>Types of software testing</li>
-						<li>Testing and Generative AI</li>
+						<!-- <li>Testing and Generative AI</li> -->
+						<li>Testing libraries</li>
+						<li>Takeaways</li>
 						<li>References</li>
 						<li>Q&A</li>
 					</ul>
@@ -135,6 +174,7 @@
 						<p> 
 							What is the percentage of your time invested in testing in a Sprint?
 						</p>
+						<img src="./images/trivia.webp" width="20%" />
 					</section>
 					<section>
 						<h2>Testing in the SLDC</h2>
@@ -143,6 +183,10 @@
 							which is <strong><u>in line with industry software cost models</u></strong>.
 						</p>
 						Tim Crumbley (NASA)
+						<hr />
+						<p>
+							<strong>Note:</strong> IMHO, the % should be higher in Distributed systems. (70%-80%)
+						</p>
 					</section>
 					<section>
 						<h2>Testing in the SLDC</h2>
@@ -154,14 +198,21 @@
 						<h2>Testing in the SLDC</h2>
 						<h3>V-Model</h3>
 						<p>
-							<strong>Every profile have to test!</strong>
+							<strong>Every role in the organization have to test!</strong>
 						</p>
 						<ul>
-							<li>Business people: Test the product</li>
-							<li>Architects: Test the architecture & system design</li>
-							<li>Dev teams: Test the code</li>
+							<li>Business people: Test the product specifications (Acceptance tests)</li>
+							<li>Architects: Test the architecture & system design (Architectural tests)</li>
+							<li>Dev teams: Test the code (Unit tests, Integration tests, etc.)</li>
 						</ul>
 					</section>
+					<section>
+						<h3>The Cost of Finding Bugs Later in the SDLC</h3>
+						<img src="./images/cost-of-defects.png" width="50%" />
+						<small><strong>Source: </strong><a href="https://www.functionize.com/blog/the-cost-of-finding-bugs-later-in-the-sdlc" 
+							target="_blank">https://www.functionize.com/blog/the-cost-of-finding-bugs-later-in-the-sdlc</a></small>
+					</section>
+					<!--
 					<section>
 						<h2>Testing in the SLDC</h2>
 						<h3>What is Testing value?</h2>
@@ -175,6 +226,7 @@
 							<li>Requirement validation</li>
 						</ul>
 					</section>
+					-->
 					<!--
 					<section>
 						<h2>What problem solve we try to solve?</h2>
@@ -193,7 +245,7 @@
 					<section>
 						<h2>Shapes of pyramids of testing</h2>
 						<p>
-							What kind of software do you develop?
+							What is the nature of your software?
 						</p>
 						<ul>
 							<li>Microservices</li>
@@ -212,7 +264,7 @@
 					</section>
 					<section>
 						<h2>Shapes of pyramids of testing</h2>
-						<p>Spotify testing model:</p>
+						<p>Spotify testing model for Microservices:</p>
 						<img src="./images/spotify-testing-model.png" width="60%" />
 						<small><strong>Source: </strong><a href="https://engineering.atspotify.com/2018/01/testing-of-microservices/" target="_blank">https://engineering.atspotify.com/2018/01/testing-of-microservices/</a></small>
 					</section>
@@ -263,6 +315,24 @@
 					</section>
 					<section>
 						<h3>Integration testing</h3>
+						<p>
+							<strong>Questions for the audience:</strong>
+						</p>
+						<p> 
+							When is better not not use Mocks and it is better to create an Integration test?
+						</p>
+						<img src="./images/trivia.webp" width="20%" />
+					</section>						
+					<section>
+						<h3>Integration testing</h3>
+						<blockquote>
+							Integration tests test the plumbing and choreography of the components. 
+							<br />
+							- Uncle Bob Martin
+						</blockquote>
+					</section>				
+					<section>
+						<h3>Integration testing</h3>
 						<img src="./images/integration-testing.png" width="80%" />
 						<small><strong>Source: </strong><a href="https://katalon.com/resources-center/blog/integration-testing" target="_blank">https://katalon.com/resources-center/blog/integration-testing</a></small>
 					</section>
@@ -279,23 +349,9 @@
 					</section>
 					<section>
 						<h3>Integration testing</h3>
-						<blockquote>
-							Integration tests test the plumbing and choreography of the components. 
-							<br />
-							- Uncle Bob Martin
-						</blockquote>
-					</section>
-					<section>
-						<h3>Integration testing</h3>
 						<p>
-							<strong>Questions for the audience:</strong>
+							Every service has an integeration testing solution:
 						</p>
-						<p> 
-							When is better not not use Mocks and it is better to create an Integration test?
-						</p>
-					</section>
-					<section>
-						<h3>Integration testing</h3>
 						<table>
 							<thead>
 								<tr>
@@ -309,21 +365,52 @@
 									<td>WireMock</td>
 								</tr>
 								<tr>
-									<td>Database</td>
+									<td>Database (Provider X)</td>
 									<td>TestContainers</td>
 								</tr>
 								<tr>
-									<td>Broker</td>
+									<td>Messaging Broker</td>
 									<td>TestContainers</td>
 								</tr>
+								<tr>
+									<td>Cache</td>
+									<td>TestContainers</td>
+								</tr>								
 							</tbody>
 						</table>
 						<small><strong>Further information: </strong><a href="https://www.testcontainers.org/" target="_blank">https://www.testcontainers.org/</a></small>
 					</section>
+					<section>
+						<h3>Integration testing</h3>
+						<img src="./images/quarkus-testing.png" width="60%" />
+						<small><strong>Source: </strong><a href="https://developers.redhat.com/e-books/quarkus-action" target="_blank">https://developers.redhat.com/e-books/quarkus-action</a></small>
+					</section>
+					<section>
+						<h3>Integration testing</h3>
+						<ul>
+							<li>Testing with a Mock Environment: @SpringBootTest</li>
+							<li>Testing with a Running Server: @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)</li>
+						</ul>
+						<small><strong>Source: </strong><a href="https://docs.spring.io/spring-boot/reference/testing/spring-boot-applications.html#testing.spring-boot-applications.with-running-server" target="_blank">https://docs.spring.io/spring-boot/reference/testing/spring-boot-applications.html#testing.spring-boot-applications.with-running-server
+						</a></small>
+					</section>
+					<section>
+						<h3>Other tests</h3>
+						<ul>
+							<li>Mutation testing</li>
+							<li>Chaos/Toxi/Resilience tests</li>
+							<li>Performance tests</li>
+							<li>Architecture tests</li>
+							<li>Security tests</li>
+							<li>Property-based testing (PBT)</li>
+							<li>...</li>
+						</ul>
+					</section>
 				</section>
 				<section>
 					<img src="./images/demo.png" width="100%" />
-				</section>				
+				</section>		
+				<!-- 		
 				<section>
 					<section>
 						<h2>Testing and Generative AI</h2>
@@ -340,6 +427,75 @@
 					<section>
 						<h2>Testing and Generative AI</h2>
 						<img src="./images/agile.png" width="50%" />
+					</section>
+				</section>
+				-->
+				<section>
+					<h2>Testing libraries</h2>
+					<table>
+						<tr>
+							<td>
+								<ul>
+									<li>junit-jupiter-params</li>
+									<li>jqwik</li>
+									<li>assertj</li>
+									<li>mockito</li>
+									<li>wiremock</li>
+								</ul>
+							</td>
+							<td>
+								<ul>
+									<li>testcontainers</li>
+									<li>toxiproxy</li>
+									<li>pitest</li>
+									<li>archunit</li>
+									<li>jmeter-java-dsl</li>
+								</ul>
+							</td>
+						</tr>
+					</table>
+				</section>
+				<section>
+					<section>
+						<h2>Takeaways</h2>
+						<ul>
+							<li>Everything begin with a good specification</li>
+							<li>Testers/QA is not an isolated role</li>
+							<li>Every team member has to test</li>
+							<li>Measure that you invest more time in testing than development</li>
+							<li>If you don't have a Love/Hate feeling with your tests, your are not testing hard enough</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Takeaways</h2>
+						<ul>
+							<li>Psycological safety is fundamental for a healthy testing culture</li>
+							<li>Reward a bug hunting culture</li>
+							<li>Punish a culture where bug / design flaws are hidden</li>
+							<li>Add testing as part of Definition of Done (DoD)</li>
+							<li>Test automation is not a silver bullet</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Takeaways</h2>
+						<ul>
+							<li>Reduce the number of dependencies in general</li>
+							<li>Don't develop tests only for passing the Sonar Gate</li>
+							<li>Verify the quality of your tests with Mutation testing</li>
+							<li>Testcontainers is not an optional technique</li>
+							<li>Testing is a skill, and like any other skill, it can be learned</li>
+							<li>Invest time test naming</li>
+							<li>Use Given/When/Then in your tests</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Takeaways</h2>
+						<ul>
+							<li>Trust in your development executed in the pipeline, not in your local development</li>
+							<li>Don't code tests only for happy path</li>
+							<li>Tests are another kind of documentation</li>
+							<li>Zero trust</li>
+						</ul>
 					</section>
 				</section>
 				<section>
@@ -394,6 +550,13 @@
 						<br />
 						<small><strong>Source: </strong><a href="https://kentbeck.com/" 
 							target="_blank">https://kentbeck.com/</a></small>
+					</section>
+					<section>
+						<h3>Specification by Example</h3>
+						<img src="images/book-specification-by-example.jpg" width="30%" />
+						<br />
+						<small><strong>Source: </strong><a href="https://gojko.net/books/specification-by-example/" 
+							target="_blank">https://gojko.net/books/specification-by-example/</a></small>
 					</section>
 					<section>
 						<h3>RESTest: Automated Black-Box Testing of RESTful Web APIs</h3>
