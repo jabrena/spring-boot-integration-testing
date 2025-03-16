@@ -1,4 +1,4 @@
-# Be or not to be a Pyramid of Testing
+# Be or not to be in a Pyramid of Testing
 
 This repository show the advantages to add integrations tests in favor of Unit tests with Mocks.
 
@@ -9,6 +9,7 @@ This repository show the advantages to add integrations tests in favor of Unit t
 ## How to build in local
 
 ```bash
+# Examples
 sdk env install
 ./mvnw clean verify
 ./mvnw clean verify surefire-report:report
@@ -23,7 +24,9 @@ curl "http://localhost:8080/gods/greek"
 ./mvnw versions:display-dependency-updates
 ./mvnw versions:display-plugin-updates
 
+#Slides
 jwebserver -p 8000 -d "$(pwd)/docs/"
+open http://localhost:8000/?print-pdf
 ```
 
 ## References
@@ -49,4 +52,4 @@ jwebserver -p 8000 -d "$(pwd)/docs/"
 - https://revealjs.com/installation/#full-setup
 
 
-Powered by [Cursor](https://www.cursor.com/)
+Powered by [Cursor AI IDE](https://www.cursor.com/)

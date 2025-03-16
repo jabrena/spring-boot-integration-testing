@@ -17,6 +17,7 @@
 	</head>
 	<body>	
 		<div class="reveal">
+			<!-- My CSS Adventures in 2025 -->
 			<!-- Footer -->
 			<style>
 				.footer {
@@ -24,6 +25,8 @@
 					left: 10px;
 					bottom: 0px;
 					z-index: 999;
+					background: #fff;
+					margin-bottom: 10px;
 				}
 			</style>
 
@@ -31,25 +34,46 @@
 				<small><a href="https://twitter.com/juanantoniobm" target="_blank">Twitter: @juanantoniobm</a></small>
 			</div>	
 			<div class="slides">
-                <section data-background-image="./images/waves-bg4.webp">
-					<h2>
-						<span style="display: inline-block; color: black;  background: #DFFF6D;">
-							Be or not to be<br/> a pyramid of testing
-						</span>
-					</h2>
-					<!--
-					<p>
-						<span style="display: inline-block; color: black;  background: #DFFF6D;">
-							
-						</span>
-					</p>
-					-->
-                    <p>
-						<span style="display: inline-block; color: black;  background: #fff;">
-                        	<a href="https://twitter.com/juanantoniobm" target="_blank">Juan Antonio Breña Moral</a>
-						</span>
-                    </p>
-                </section>
+				<section>
+					<section data-background-image="./images/bg-hamlet2.jpg">
+						<h2>
+							<span style="display: inline-block; color: black;  background: #DFFF6D;">
+								Be or not to be<br/> in a pyramid of testing
+							</span>
+						</h2>
+						<!--
+						<p>
+							<span style="display: inline-block; color: black;  background: #DFFF6D;">
+								
+							</span>
+						</p>
+						-->
+						<p>
+							<span style="display: inline-block; color: black;  background: #fff;">
+								<a href="https://twitter.com/juanantoniobm" target="_blank">Juan Antonio Breña Moral</a>
+							</span>
+						</p>
+					</section>
+					<section>
+						<small>
+							<blockquote>
+								The "To be or not to be" soliloquy appears in Act 3, Scene 1 of Shakespeare’s Hamlet. 
+								<br />
+								In this scene, often called the "nunnery scene," Prince Hamlet thinks about life, death, and suicide. 
+								<br />
+								Specifically, he wonders whether it might be preferable to commit suicide to end one's suffering and 
+								to leave behind the pain and agony associated with living.
+							</blockquote>
+						</small>
+						<p>
+							<strong>
+								How to live with the lack of testing?
+								<br/>
+								This is the question...
+							</strong>
+						</p>
+					</section>
+				</section>
 				<section data-background-image="./images/waves-bg3.jpg">
 					<section>
 						<blockquote style="background-color: white;">
@@ -83,14 +107,16 @@
 					</section>
 				</section>
 				<section>
+					<img src="./images/ppt.png" width="60%" />
+					<small><strong>Source: </strong><a href="https://cio-wiki.org/wiki/Leavitt%27s_Alignment_Model" target="_blank">Leavitt's Alignment Model (1965) >> People, Process and Technology Framework</a></small>
+				</section>
+				<section>
 					<h2>Agenda</h2>
 					<ul>
 						<li>Testing in the SLDC</li>
-						<li>What is Testing value?</li>
 						<li>Shapes of pyramids of testing</li>
 						<li>Types of software testing</li>
 						<li>Testing and Generative AI</li>
-						<li>Live code demo</li>
 						<li>References</li>
 						<li>Q&A</li>
 					</ul>
@@ -98,7 +124,8 @@
 				<section>
 					<section>
 						<h2>Testing in the SLDC</h2>
-						<img src="./images/SDLC.webp" width="40%" />
+						<img src="./images/sldc.webp" width="40%" />
+						<small><strong>Source: </strong><a href="https://datarob.com/essentials-software-development-life-cycle/" target="_blank">https://datarob.com/essentials-software-development-life-cycle/</a></small>
 					</section>
 					<section>
 						<h2>Testing in the SLDC</h2>
@@ -117,10 +144,27 @@
 						</p>
 						Tim Crumbley (NASA)
 					</section>
-				</section>
-				<section>
 					<section>
-						<h2>What is Testing value?</h2>
+						<h2>Testing in the SLDC</h2>
+						<h3>V-Model</h3>
+						<img src="./images/sldc-v-model.png" width="40%" />
+						<small><strong>Source: </strong><a href="https://www.geeksforgeeks.org/software-engineering-sdlc-v-model/" target="_blank">https://www.geeksforgeeks.org/software-engineering-sdlc-v-model/</a></small>
+					</section>
+					<section>
+						<h2>Testing in the SLDC</h2>
+						<h3>V-Model</h3>
+						<p>
+							<strong>Every profile have to test!</strong>
+						</p>
+						<ul>
+							<li>Business people: Test the product</li>
+							<li>Architects: Test the architecture & system design</li>
+							<li>Dev teams: Test the code</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Testing in the SLDC</h2>
+						<h3>What is Testing value?</h2>
 						<p>
 							The value of testing really boils down to:
 						</p>
@@ -142,65 +186,98 @@
 				<section>
 					<section>
 						<h2>Shapes of pyramids of testing</h2>
+						<p>Classical testing pyramid:</p>
 						<img src="./images/traditional-testing-pyramid.png" width="40%" />
 						<small><strong>Source: </strong><a href="https://engineering.atspotify.com/2018/01/testing-of-microservices/" target="_blank">https://engineering.atspotify.com/2018/01/testing-of-microservices/</a></small>
 					</section>
 					<section>
 						<h2>Shapes of pyramids of testing</h2>
+						<p>
+							What kind of software do you develop?
+						</p>
+						<ul>
+							<li>Microservices</li>
+							<li>Monolithic</li>
+							<li>Mobile</li>
+							<li>Web</li>
+							<li>Libraries</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Shapes of pyramids of testing</h2>
+						<p>
+							If you think in a Microservice architecture...
+						</p>
 						<img src="./images/guillermo-rauch.png" width="50%" />
 					</section>
 					<section>
 						<h2>Shapes of pyramids of testing</h2>
-						<img src="./images/microservice-testing-honeycomb.png" width="40%" />
+						<p>Spotify testing model:</p>
+						<img src="./images/spotify-testing-model.png" width="60%" />
+						<small><strong>Source: </strong><a href="https://engineering.atspotify.com/2018/01/testing-of-microservices/" target="_blank">https://engineering.atspotify.com/2018/01/testing-of-microservices/</a></small>
+					</section>
+					<section>
+						<h2>Shapes of pyramids of testing</h2>
+						<p><strong>From:</strong></p>
+						<img src="./images/traditional-testing-pyramid.png" width="40%" />
+						<small><strong>Source: </strong><a href="https://engineering.atspotify.com/2018/01/testing-of-microservices/" target="_blank">https://engineering.atspotify.com/2018/01/testing-of-microservices/</a></small>
+					</section>
+					<section>
+						<h2>Shapes of pyramids of testing</h2>
+						<p><strong>To:</strong></p>
+						<img src="./images/microservice-testing-honeycomb.png" width="30%" />
 						<small><strong>Source: </strong><a href="https://engineering.atspotify.com/2018/01/testing-of-microservices/" target="_blank">https://engineering.atspotify.com/2018/01/testing-of-microservices/</a></small>
 					</section>
 					<section>
 						<h2>Shapes of pyramids of testing</h2>
 						<ul>
-							<li>Unit: Test 1 thing, alone</li>
-							<li>Integration: Test a few things, together</li>
-							<li>End-to-end (E2E): Test that everything works together (run the app)</li>
+							<li>Unit Testing: Test 1 thing, alone</li>
+							<li>Integration Testing: Test a few things, together</li>
+							<li>End-to-end (E2E) Testing: Test that everything works together (run the app)</li>
 						</ul>
 					</section>
 				</section>
 				<section>
 					<section>
 						<h2>Types of software testing</h2>
+					</section>
+					<section>
 						<h3>Unit testing</h3>
 						<img src="./images/unit-test.png" width="50%" />
 						<small><strong>Source: </strong><a href="https://martinfowler.com/bliki/UnitTest.html" target="_blank">https://martinfowler.com/bliki/UnitTest.html</a></small>
 					</section>
 					<section>
-						<h2>Types of software testing</h2>
 						<h3>Unit testing</h3>
 						<p>
 							Unit testing is a type of software testing where individual units or components of a software are tested. The purpose of unit testing is to validate that each unit of the software performs as expected.
 						</p>
 					</section>
 					<section>
-						<h2>Types of software testing</h2>
 						<h3>Concepts</h3>
 						<ul>
 							<li><strong>Mocks: </strong>Mocking is the practice of creating simulated versions of the objects in the code, and then using these mock objects to mimic the behavior of the real objects or services so that we can test parts of the code in isolation.</li>
-						</ul>
-						<strong>Interesting article: </strong><a href="https://martinfowler.com/articles/mocksArentStubs.html" target="_blank">Mocks Aren't Stubs</a>
-					</section>
-					<section>
-						<h2>Types of software testing</h2>
-						<h3>Concepts</h3>
-						<ul>
 							<li><strong>Stubs: </strong>A stub is a test double that returns a configured response every time when an expected interaction happens between the system under test and a stub. </li>
+
 						</ul>
-						<strong>Interesting article: </strong><a href="https://martinfowler.com/articles/mocksArentStubs.html" target="_blank">Mocks Aren't Stubs</a>
+						<small><strong>Interesting article: </strong><a href="https://martinfowler.com/articles/mocksArentStubs.html" target="_blank">Mocks Aren't Stubs</a></small>
 					</section>
 					<section>
-						<h2>Types of software testing</h2>
 						<h3>Integration testing</h3>
 						<img src="./images/integration-testing.png" width="80%" />
 						<small><strong>Source: </strong><a href="https://katalon.com/resources-center/blog/integration-testing" target="_blank">https://katalon.com/resources-center/blog/integration-testing</a></small>
 					</section>
 					<section>
-						<h2>Types of software testing</h2>
+						<h3>Integration testing</h3>
+						<p>
+							Integration testing is a type of software testing where the software is tested as a whole, to ensure that the different parts of the software work together as expected.
+						</p>
+					</section>
+					<section>
+						<h3>Integration testing</h3>
+						<img src="./images/structurizr-1-Components.png" width="68%" />
+						<small><strong>Source: </strong><a href="https://www.structurizr.com/share/1/diagrams#Components" target="_blank">https://www.structurizr.com/share/1/diagrams#Components</a></small>
+					</section>
+					<section>
 						<h3>Integration testing</h3>
 						<blockquote>
 							Integration tests test the plumbing and choreography of the components. 
@@ -209,20 +286,6 @@
 						</blockquote>
 					</section>
 					<section>
-						<h2>Types of software testing</h2>
-						<h3>Integration testing</h3>
-						<p>
-							Integration testing is a type of software testing where the software is tested as a whole, to ensure that the different parts of the software work together as expected.
-						</p>
-					</section>
-					<section>
-						<h2>Types of software testing</h2>
-						<h3>Integration testing</h3>
-						<img src="images/mockito-made-clear.jpg" width="30%" />
-						<small><strong>Source: </strong><a href="https://pragprog.com/titles/mockito/mockito-made-clear/" target="_blank">https://pragprog.com/titles/mockito/mockito-made-clear/</a></small>
-					</section>
-					<section>
-						<h2>Types of software testing</h2>
 						<h3>Integration testing</h3>
 						<p>
 							<strong>Questions for the audience:</strong>
@@ -232,7 +295,6 @@
 						</p>
 					</section>
 					<section>
-						<h2>Types of software testing</h2>
 						<h3>Integration testing</h3>
 						<table>
 							<thead>
@@ -256,9 +318,12 @@
 								</tr>
 							</tbody>
 						</table>
-						<strong>Further information: </strong><a href="https://www.testcontainers.org/" target="_blank">https://www.testcontainers.org/</a>
+						<small><strong>Further information: </strong><a href="https://www.testcontainers.org/" target="_blank">https://www.testcontainers.org/</a></small>
 					</section>
 				</section>
+				<section>
+					<img src="./images/demo.png" width="100%" />
+				</section>				
 				<section>
 					<section>
 						<h2>Testing and Generative AI</h2>
@@ -269,7 +334,8 @@
 					<section>
 						<h2>Testing and Generative AI</h2>
 						<img src="./images/ai-code.png" width="70%" />
-						<small><strong>Source: </strong><a href="https://www.gitclear.com/ai_assistant_code_quality_2025_research" target="_blank">https://www.gitclear.com/ai_assistant_code_quality_2025_research</a></small>
+						<small><strong>Source: </strong><a href="https://www.gitclear.com/ai_assistant_code_quality_2025_research" 
+							target="_blank">https://www.gitclear.com/ai_assistant_code_quality_2025_research</a></small>
 					</section>
 					<section>
 						<h2>Testing and Generative AI</h2>
@@ -279,11 +345,70 @@
 				<section>
 					<section>
 						<h2>References</h2>
+					</section>					
+					<section>
+						<h3>Mockito made clear</h3>
+						<img src="images/book-mockito-made-clear.jpg" width="30%" />
+						<small><strong>Source: </strong><a href="https://pragprog.com/titles/mockito/mockito-made-clear/" 
+							target="_blank">https://pragprog.com/titles/mockito/mockito-made-clear/</a></small>
 					</section>
+					<section>
+						<h3>Mockito Cookbook</h3>
+						<img src="images/book-mockito-cookbook.jpg" width="30%" />
+						<small><strong>Source: </strong><a href="https://www.amazon.com/-/es/Marcin-Grzejszczak-ebook/dp/B00LA414IM" 
+							target="_blank">https://www.amazon.com/-/es/Marcin-Grzejszczak-ebook/dp/B00LA414IM</a></small>
+					</section>
+					<section>
+						<h3>Instant Mockito</h3>
+						<img src="images/book-instant-mockito.jpg" width="30%" />
+						<small><strong>Source: </strong><a href="https://www.amazon.com/Instant-Mockito-Marcin-Grzejszczak/dp/1782167978" 
+							target="_blank">https://www.amazon.com/Instant-Mockito-Marcin-Grzejszczak/dp/1782167978</a></small>
+					</section>	
+					<section>
+						<h3>Unit Testing in Java with JUnit</h3>
+						<img src="images/book-pragmatic-unit-testing-in-java.jpg" width="30%" />
+						<small><strong>Source: </strong><a href="https://pragprog.com/titles/utj3/pragmatic-unit-testing-in-java-with-junit-third-edition/" 
+							target="_blank">https://pragprog.com/titles/utj3/pragmatic-unit-testing-in-java-with-junit-third-edition/</a></small>
+					</section>		
+					<section>
+						<h3>Unit Testing</h3>
+						<img src="images/book-pragmatic-unit-testing-in-java8.jpg" width="30%" />
+						<small><strong>Source: </strong><a href="https://pragprog.com/titles/utj2/pragmatic-unit-testing-in-java-8-with-junit/" 
+							target="_blank">https://pragprog.com/titles/utj2/pragmatic-unit-testing-in-java-8-with-junit/</a></small>
+					</section>
+					<section>
+						<h3>Fifty quick ideas to improve your tests</h3>
+						<img src="images/book-50-ideas-testing.jpg" width="40%" />
+						<small><strong>Source: </strong><a href="https://fiftyquickideas.com/fifty-quick-ideas-to-improve-your-tests/" 
+							target="_blank">https://fiftyquickideas.com/fifty-quick-ideas-to-improve-your-tests/</a></small>
+					</section>		
+					<section>
+						<h3>Test Driven Development: By Example</h3>
+						<img src="images/book-tdd.jpg" width="30%" />
+						<small><strong>Source: </strong><a href="https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530" 
+							target="_blank">https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530</a></small>
+					</section>		
+					<section>
+						<h3>Extreme Programming Explained</h3>
+						<img src="images/book-xp.jpg" width="40%" />
+						<br />
+						<small><strong>Source: </strong><a href="https://kentbeck.com/" 
+							target="_blank">https://kentbeck.com/</a></small>
+					</section>
+					<section>
+						<h3>RESTest: Automated Black-Box Testing of RESTful Web APIs</h3>
+						<img src="images/paper-restest.png" width="30%" />
+						<br />
+						<small><strong>Source: </strong><a href="https://personal.us.es/amarlop/wp-content/uploads/2021/06/RESTest-Automated-Black-Box-Testing-of-RESTful-Web-APIs.pdf" 
+							target="_blank">RESTest: Automated Black-Box Testing of RESTful Web APIs</a></small>
+					</section>																					
 				</section>
 				<section>
-					<img src="./images/demo-time.png" width="30%" />
-				</section>
+					<h1>🙏 🙏 🙏</h1>
+					<p>
+						Thanks
+					</p>
+				</section>				
 			</div>
 		</div>
 
