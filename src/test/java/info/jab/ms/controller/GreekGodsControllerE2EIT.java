@@ -1,6 +1,5 @@
 package info.jab.ms.controller;
 
-import info.jab.ms.config.PostgreTestContainers;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,6 +12,9 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.TestPropertySource;
+
+import info.jab.ms.utils.PostgreTestContainers;
+
 import java.util.List;
 import static org.assertj.core.api.BDDAssertions.then;
 import org.springframework.jdbc.core.JdbcTemplate;

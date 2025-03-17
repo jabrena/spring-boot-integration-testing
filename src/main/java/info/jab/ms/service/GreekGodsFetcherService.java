@@ -21,13 +21,15 @@ public class GreekGodsFetcherService {
 
     private static final Logger logger = LoggerFactory.getLogger(GreekGodsFetcherService.class);
 
-    @Value("${address}")
-    private String address;
-
+    private final String address;
     private final RestTemplate restTemplate;
     private final GreekGodRepository greekGodRepository;
 
-    public GreekGodsFetcherService(RestTemplate restTemplate, GreekGodRepository greekGodRepository) {
+    public GreekGodsFetcherService(
+            @Value("${address}") String address,
+            RestTemplate restTemplate, 
+            GreekGodRepository greekGodRepository) {
+        this.address = address;
         this.restTemplate = restTemplate;
         this.greekGodRepository = greekGodRepository;
     }

@@ -19,6 +19,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <java.version>23</java.version>
+    <mockito.version>5.10.0</mockito.version>
   </properties>
 
   <dependencies>
@@ -134,7 +135,6 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.5.2</version>
         <configuration>
-          <argLine>${argLine} --enable-preview</argLine>
           <includes>
             <include>**/*Test.java</include>
           </includes>
@@ -146,7 +146,6 @@
         <artifactId>maven-failsafe-plugin</artifactId>
         <version>3.5.2</version>
         <configuration>
-          <argLine>${argLine} --enable-preview</argLine>
           <includes>
             <include>**/*IT.java</include>
           </includes>
@@ -191,12 +190,12 @@
                     <limit>
                       <counter>INSTRUCTION</counter>
                       <value>COVEREDRATIO</value>
-                      <minimum>0.75</minimum>
+                      <minimum>0.8</minimum>
                     </limit>
                     <limit>
                       <counter>BRANCH</counter>
                       <value>COVEREDRATIO</value>
-                      <minimum>0.75</minimum>
+                      <minimum>0.8</minimum>
                     </limit>
                   </limits>
                 </rule>

@@ -1,4 +1,4 @@
-package info.jab.ms.config;
+package info.jab.ms.utils;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
