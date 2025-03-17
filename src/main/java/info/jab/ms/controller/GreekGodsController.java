@@ -1,6 +1,6 @@
-package info.jab.ms.gods.controller;
+package info.jab.ms.controller;
 
-import info.jab.ms.gods.service.GreekGodsService;
+import info.jab.ms.service.GreekGodsService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,8 +16,7 @@ public class GreekGodsController {
     }
 
     @GetMapping("/gods/greek")
-    List<String> getGreekGods() {
+    List<String> getGreekGodNames() {
         return greekGodsService.getGreekGods();
     }
-
 } 

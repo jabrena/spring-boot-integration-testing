@@ -1,4 +1,4 @@
-package info.jab.ms.gods.repository;
+package info.jab.ms.repository;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
