@@ -1,10 +1,10 @@
-package info.jab.ms.gods.service;
+package info.jab.ms.service;
 
-import info.jab.ms.gods.repository.GreekGod;
-import info.jab.ms.gods.repository.GreekGodRepository;
-import org.junit.jupiter.api.BeforeEach;
+import info.jab.ms.repository.GreekGod;
+import info.jab.ms.repository.GreekGodRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.core.ParameterizedTypeReference;
@@ -16,13 +16,12 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-class GreekGodsServiceTest {
+class GreekGodsFetcherServiceTest {
 
     private static final String TEST_ADDRESS = "http://test-address.com/api";
 
@@ -32,17 +31,13 @@ class GreekGodsServiceTest {
     @Mock
     private GreekGodRepository greekGodRepository;
 
-    private GreekGodsServiceImpl greekGodsService;
-
-    @BeforeEach
-    void setUp() {
-        greekGodsService = new GreekGodsServiceImpl(restTemplate, greekGodRepository);
-        ReflectionTestUtils.setField(greekGodsService, "address", TEST_ADDRESS);
-    }
+    @InjectMocks
+    private GreekGodsFetcherService greekGodsFetcherService;
 
     @Test
-    void should_return_data_when_get_greek_gods() {
+    void should_fetch_and_store_greek_gods() {
         // Given
+        ReflectionTestUtils.setField(greekGodsFetcherService, "address", TEST_ADDRESS);
         List<String> expectedData = List.of("Zeus", "Poseidon", "Hades");
         ResponseEntity<List<String>> responseEntity = new ResponseEntity<>(expectedData, HttpStatus.OK);
         
@@ -54,21 +49,23 @@ class GreekGodsServiceTest {
         );
 
         // When
-        List<String> result = greekGodsService.getGreekGods();
+        greekGodsFetcherService.fetchAndStoreGreekGods();
 
         // Then
-        assertThat(result)
-            .isNotNull()
-            .hasSize(3)
-            .containsExactly("Zeus", "Poseidon", "Hades");
-        
         verify(greekGodRepository).deleteAll();
-        verify(greekGodRepository).saveAll(any());
+        verify(greekGodRepository).saveAll(argThat(gods -> {
+            List<GreekGod> godList = (List<GreekGod>) gods;
+            return godList.size() == 3 &&
+                   godList.stream().map(GreekGod::getName)
+                         .toList()
+                         .containsAll(expectedData);
+        }));
     }
-    
+
     @Test
-    void should_handle_null_response_when_get_greek_gods() {
+    void should_handle_null_response() {
         // Given
+        ReflectionTestUtils.setField(greekGodsFetcherService, "address", TEST_ADDRESS);
         ResponseEntity<List<String>> responseEntity = new ResponseEntity<>(null, HttpStatus.OK);
         
         doReturn(responseEntity).when(restTemplate).exchange(
@@ -79,34 +76,29 @@ class GreekGodsServiceTest {
         );
 
         // When
-        List<String> result = greekGodsService.getGreekGods();
+        greekGodsFetcherService.fetchAndStoreGreekGods();
 
         // Then
-        assertThat(result).isNull();
-        
-        // Verify repository methods were not called
         verify(greekGodRepository, never()).deleteAll();
         verify(greekGodRepository, never()).saveAll(any());
     }
-    
+
     @Test
-    void should_return_all_gods_from_database() {
+    void should_handle_exception_gracefully() {
         // Given
-        List<GreekGod> expectedGods = List.of(
-            new GreekGod("Zeus"),
-            new GreekGod("Poseidon"),
-            new GreekGod("Hades")
+        ReflectionTestUtils.setField(greekGodsFetcherService, "address", TEST_ADDRESS);
+        doThrow(new RuntimeException("API Error")).when(restTemplate).exchange(
+                eq(TEST_ADDRESS),
+                eq(HttpMethod.GET),
+                eq(null),
+                any(ParameterizedTypeReference.class)
         );
-        when(greekGodRepository.findAll()).thenReturn(expectedGods);
 
         // When
-        List<GreekGod> result = greekGodsService.getAllGodsFromDatabase();
+        greekGodsFetcherService.fetchAndStoreGreekGods();
 
         // Then
-        assertThat(result)
-            .isNotNull()
-            .hasSize(3);
-        
-        verify(greekGodRepository).findAll();
+        verify(greekGodRepository, never()).deleteAll();
+        verify(greekGodRepository, never()).saveAll(any());
     }
 } 

@@ -1,6 +1,6 @@
-package info.jab.ms.gods.controller;
+package info.jab.ms.controller;
 
-import info.jab.ms.gods.service.GreekGodsService;
+import info.jab.ms.service.GreekGodsService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -23,13 +23,13 @@ class GreekGodsControllerTest {
     private GreekGodsController greekGodsController;
 
     @Test
-    void should_return_greek_gods() {
+    void should_return_greek_god_names() {
         // Given
-        List<String> expectedGods = List.of("Zeus", "Poseidon", "Hades");
-        when(greekGodsService.getGreekGods()).thenReturn(expectedGods);
+        List<String> expectedGodNames = List.of("Zeus", "Poseidon", "Hades");
+        when(greekGodsService.getGreekGods()).thenReturn(expectedGodNames);
 
         // When
-        List<String> result = greekGodsController.getGreekGods();
+        List<String> result = greekGodsController.getGreekGodNames();
 
         // Then
         assertThat(result)

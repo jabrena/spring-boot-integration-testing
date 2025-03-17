@@ -4,7 +4,7 @@ This repository show the advantages to add integrations tests in favor of Unit t
 
 ## Design
 
-![](./docs/design.png)
+![](./docs-analysis/design.png)
 
 ## How to build in local
 
@@ -12,6 +12,7 @@ This repository show the advantages to add integrations tests in favor of Unit t
 # Examples
 sdk env install
 ./mvnw clean verify
+./mvnw clean integration-test
 ./mvnw clean verify surefire-report:report
 ./mvnw clean verify jacoco:report
 jwebserver -p 8000 -d "$(pwd)/target/site/"
@@ -26,6 +27,7 @@ curl "http://localhost:8080/gods/greek"
 
 #Slides
 jwebserver -p 8000 -d "$(pwd)/docs/"
+open http://localhost:8000/
 open http://localhost:8000/?print-pdf
 ```
 
@@ -47,6 +49,7 @@ open http://localhost:8000/?print-pdf
 - https://kentcdodds.com/blog/write-tests
 - https://plantuml.com/es/
 - https://real-world-plantuml.com/
+- https://plantuml.com/en/sequence-diagram
 - https://testing.googleblog.com/
 - https://revealjs.com/
 - https://revealjs.com/installation/#full-setup

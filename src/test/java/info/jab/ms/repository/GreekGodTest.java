@@ -1,4 +1,4 @@
-package info.jab.ms.gods.repository;
+package info.jab.ms.repository;
 
 import org.junit.jupiter.api.Test;
 

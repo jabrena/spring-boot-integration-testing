@@ -1,4 +1,4 @@
-package info.jab.ms.gods.config;
+package info.jab.ms.config;
 
 import org.springframework.boot.test.util.TestPropertyValues;
 import org.springframework.context.ApplicationContextInitializer;

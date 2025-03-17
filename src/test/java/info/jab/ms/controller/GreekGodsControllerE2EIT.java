@@ -1,7 +1,6 @@
-package info.jab.ms.gods.controller;
+package info.jab.ms.controller;
 
-import com.github.tomakehurst.wiremock.WireMockServer;
-import info.jab.ms.gods.config.PostgreTestContainers;
+import info.jab.ms.config.PostgreTestContainers;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,44 +14,45 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.TestPropertySource;
 import java.util.List;
-import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
-import static com.github.tomakehurst.wiremock.client.WireMock.get;
-import static com.github.tomakehurst.wiremock.client.WireMock.urlEqualTo;
 import static org.assertj.core.api.BDDAssertions.then;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 @PostgreTestContainers
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@TestPropertySource(properties = { "address=http://localhost:8090/an/endpoint" })
-class MyControllerTest {
+@TestPropertySource(properties = {
+    "scheduler.enabled=false" 
+})
+class GreekGodsControllerE2EIT {
 
     @LocalServerPort
     private int port;
 
     @Autowired
     private TestRestTemplate restTemplate;
-
-    WireMockServer wireMockServer;
+    
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
 
     @BeforeEach
-    public void setup () {
-        wireMockServer = new WireMockServer(8090);
-        wireMockServer.start();
+    public void setup() {
+        // Clear any existing data
+        jdbcTemplate.execute("DELETE FROM greek_gods");
+        
+        // Insert test data
+        jdbcTemplate.execute("INSERT INTO greek_gods (name) VALUES ('Zeus')");
+        jdbcTemplate.execute("INSERT INTO greek_gods (name) VALUES ('Poseidon')");
+        jdbcTemplate.execute("INSERT INTO greek_gods (name) VALUES ('Hades')");
     }
 
     @AfterEach
-    public void teardown () {
-        wireMockServer.stop();
+    public void cleanup() {
+        // Clean up after test
+        jdbcTemplate.execute("DELETE FROM greek_gods");
     }
 
     @Test
     public void should_return_all_greek_gods() {
-
         //Given
-        wireMockServer.stubFor(get(urlEqualTo("/an/endpoint"))
-                .willReturn(aResponse().withHeader("Content-Type", "application/json")
-                        .withStatus(200)
-                        .withBodyFile("greek-gods-200.json")));
-
         String address = "http://localhost:" + port + "/gods/greek";
 
         //When
@@ -66,6 +66,7 @@ class MyControllerTest {
 
         //Then
         then(result.getStatusCode()).isEqualTo(HttpStatus.OK);
-        then(result.getBody().size()).isGreaterThan(0);
-    }
+        then(result.getBody()).isNotNull();
+        then(result.getBody()).contains("Zeus", "Poseidon", "Hades");
+    }    
 }
