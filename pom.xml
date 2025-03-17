@@ -146,6 +146,7 @@
         <artifactId>maven-failsafe-plugin</artifactId>
         <version>3.5.2</version>
         <configuration>
+          <argLine>${argLine} --enable-preview</argLine>
           <includes>
             <include>**/*IT.java</include>
           </includes>

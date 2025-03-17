@@ -2,15 +2,18 @@ package info.jab.ms.service;
 
 import info.jab.ms.repository.GreekGod;
 import info.jab.ms.repository.GreekGodRepository;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
@@ -29,6 +32,7 @@ class GreekGodsFetcherServiceTest {
 
     @Mock
     private GreekGodRepository greekGodRepository;
+
 
     private GreekGodsFetcherService greekGodsFetcherService;
     
@@ -74,8 +78,22 @@ class GreekGodsFetcherServiceTest {
                 ArgumentMatchers.<ParameterizedTypeReference<List<String>>>any()
         )).thenThrow(new RestClientException("API not available"));
 
+    @Test
+    void should_handle_null_response() {
+        // Given
+        ReflectionTestUtils.setField(greekGodsFetcherService, "address", TEST_ADDRESS);
+        ResponseEntity<List<String>> responseEntity = new ResponseEntity<>(null, HttpStatus.OK);
+        
+        doReturn(responseEntity).when(restTemplate).exchange(
+                eq(TEST_ADDRESS),
+                eq(HttpMethod.GET),
+                eq(null),
+                any(ParameterizedTypeReference.class)
+        );
+
         // When
         greekGodsFetcherService.fetchAndStoreGreekGods();
+
 
         // Then - verify the error is handled and no database operations occur
         verify(greekGodRepository, never()).deleteAll();
@@ -92,6 +110,22 @@ class GreekGodsFetcherServiceTest {
                 eq(HttpMethod.GET),
                 eq(null),
                 ArgumentMatchers.<ParameterizedTypeReference<List<String>>>any()
+
+        // Then
+        verify(greekGodRepository, never()).deleteAll();
+        verify(greekGodRepository, never()).saveAll(any());
+    }
+
+    @Test
+    void should_handle_exception_gracefully() {
+        // Given
+        ReflectionTestUtils.setField(greekGodsFetcherService, "address", TEST_ADDRESS);
+        doThrow(new RuntimeException("API Error")).when(restTemplate).exchange(
+                eq(TEST_ADDRESS),
+                eq(HttpMethod.GET),
+                eq(null),
+                any(ParameterizedTypeReference.class)
+
         );
 
         // When
@@ -100,5 +134,6 @@ class GreekGodsFetcherServiceTest {
         // Then - verify the null response is handled and no database operations occur
         verify(greekGodRepository, never()).deleteAll();
         verify(greekGodRepository, never()).saveAll(anyList());
+
     }
 } 

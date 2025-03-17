@@ -15,6 +15,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.ArgumentMatchers.any;
 
+
 @ExtendWith(MockitoExtension.class)
 class GreekGodsServiceTest {
 
@@ -57,4 +58,5 @@ class GreekGodsServiceTest {
         // Then
         verify(greekGodRepository).save(any(GreekGod.class));
     }
+
 } 
