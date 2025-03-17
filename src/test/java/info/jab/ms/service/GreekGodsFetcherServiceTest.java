@@ -78,10 +78,17 @@ class GreekGodsFetcherServiceTest {
                 ArgumentMatchers.<ParameterizedTypeReference<List<String>>>any()
         )).thenThrow(new RestClientException("API not available"));
 
+        // When
+        greekGodsFetcherService.fetchAndStoreGreekGods();
+
+        // Then
+        verify(greekGodRepository, never()).deleteAll();
+        verify(greekGodRepository, never()).saveAll(any());
+    }
+
     @Test
     void should_handle_null_response() {
         // Given
-        ReflectionTestUtils.setField(greekGodsFetcherService, "address", TEST_ADDRESS);
         ResponseEntity<List<String>> responseEntity = new ResponseEntity<>(null, HttpStatus.OK);
         
         doReturn(responseEntity).when(restTemplate).exchange(
@@ -109,7 +116,11 @@ class GreekGodsFetcherServiceTest {
                 eq(TEST_ADDRESS),
                 eq(HttpMethod.GET),
                 eq(null),
-                ArgumentMatchers.<ParameterizedTypeReference<List<String>>>any()
+                ArgumentMatchers.<ParameterizedTypeReference<List<String>>>any());
+
+        // When
+        greekGodsFetcherService.fetchAndStoreGreekGods();
+
 
         // Then
         verify(greekGodRepository, never()).deleteAll();
@@ -119,7 +130,6 @@ class GreekGodsFetcherServiceTest {
     @Test
     void should_handle_exception_gracefully() {
         // Given
-        ReflectionTestUtils.setField(greekGodsFetcherService, "address", TEST_ADDRESS);
         doThrow(new RuntimeException("API Error")).when(restTemplate).exchange(
                 eq(TEST_ADDRESS),
                 eq(HttpMethod.GET),
