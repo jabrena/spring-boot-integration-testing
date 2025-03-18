@@ -1,0 +1,20 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+Person(user, "User")
+System_Boundary(c1, "System") {
+    Component(controller, "Spring Boot Rest Controller", "Allows users to retrieve Greek god information")
+    Component(godService, "Spring Boot Service", "Provides Greek God data")
+    Component(godRepository, "Spring Data Repository", "Database access")
+    Component(db, "Database", "PostgreSQL", "Relational Database")
+    Component(godPeriodicalSync, "Spring Boot Service", "Periodical Grek Good Database update")
+}
+System_Ext(json_server, "My JSON Server")
+
+Rel(user, controller, "Uses", "HTTPS/JSON")
+Rel(controller, godService, "")
+Rel(godService, godRepository, "Read")
+Rel(godRepository, db, "Read/Write", "TCP")
+Rel(godPeriodicalSync, json_server, "Gets greek gods from", "HTTPS")
+Rel(godPeriodicalSync, godRepository, "Write")
+@enduml

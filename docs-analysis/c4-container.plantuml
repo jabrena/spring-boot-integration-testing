@@ -1,0 +1,15 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+Person(user, "User")
+System_Boundary(c1, "System") {
+    Container(web_app, "Web Application", "Spring Boot", "Handle information about Greek gods")
+    ContainerDb(db, "Database", "PostgreSQL", "Holds God information")
+}
+System_Ext(json_server, "My JSON Server")
+
+Rel(user, web_app, "Uses", "HTTPS")
+Rel(web_app, db, "Read", "TCP")
+Rel(web_app, db, "Write", "TCP")
+Rel(web_app, json_server, "Gets greek gods from", "HTTPS")
+@enduml
