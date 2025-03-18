@@ -4,7 +4,7 @@ This repository show the advantages to add integrations tests in favor of Unit t
 
 ## Design
 
-![](./docs-analysis/design.png)
+![](./docs-analysis/uml-sequence-diagram.png)
 
 ## How to build in local
 
@@ -50,6 +50,8 @@ open http://localhost:8000/?print-pdf
 - https://plantuml.com/es/
 - https://real-world-plantuml.com/
 - https://plantuml.com/en/sequence-diagram
+- https://github.com/plantuml-stdlib/C4-PlantUML
+- https://c4model.com/
 - https://testing.googleblog.com/
 - https://revealjs.com/
 - https://revealjs.com/installation/#full-setup

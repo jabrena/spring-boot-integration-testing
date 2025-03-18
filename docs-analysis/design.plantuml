@@ -1,9 +1,14 @@
 @startuml
 
 actor "User"
+
+box "Microservice scope" #LightBlue
+
 boundary "REST API"
 database "God Db"
 control "God Updater"
+
+end box
 
 group Write process
 

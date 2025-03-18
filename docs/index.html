@@ -239,6 +239,45 @@
 				</section>
 				<section>
 					<section>
+						<img src="./images/demo.png" width="100%" />
+					</section>
+					<section>
+						<h3>C4 Model</h3>
+						<img src="./images/c4-model.png" width="100%" />
+					</section>
+					<section>
+						<h3>C4 Model</h3>
+						<!--
+						<p>
+							<strong>Context:</strong> The highest level of abstraction.
+						</p>
+						-->
+						<img src="./images/c4-context.png" width="25%" />
+					</section>
+					<section>
+						<h3>C4 Model</h3>
+						<!--
+						<p>
+							<strong>Container:</strong> A container is something that needs to be running in order for the overall software system to work.
+						</p>
+						-->
+						<img src="./images/c4-container.png" width="40%" />
+					</section>
+					<section>
+						<h3>C4 Model</h3>
+						<!--
+						<p>
+							<strong>Component:</strong> A component is a grouping of related functionality encapsulated behind a well-defined interface.
+						</p>
+						-->
+						<img src="./images/c4-component.png" width="40%" />
+					</section>
+					<section>
+						<img src="./images/uml-sequence-diagram.png" width="100%" />
+					</section>
+				</section>				
+				<section>
+					<section>
 						<h2>Types of software testing</h2>
 					</section>
 					<section>
@@ -260,6 +299,22 @@
 
 						</ul>
 						<small><strong>Interesting article: </strong><a href="https://martinfowler.com/articles/mocksArentStubs.html" target="_blank">Mocks Aren't Stubs</a></small>
+					</section>
+					<section>
+						<h3>Concepts</h3>
+						<pre><code data-trim data-noescape>
+
+< plugin>
+	< artifactId>maven-surefire-plugin< /artifactId>
+	< version>3.5.2< /version>
+	< configuration>
+		< includes>
+			< include>**/*Test.java< /include>
+		< /includes>
+	< /configuration>
+< /plugin>
+
+						</code></pre>
 					</section>
 					<section>
 						<h3>Integration testing</h3>
@@ -343,6 +398,24 @@
 						</a></small>
 					</section>
 					<section>
+						<h3>Concepts</h3>
+						<pre><code data-trim data-noescape>
+
+< plugin>
+	< groupId>org.apache.maven.plugins< /groupId>
+	< artifactId>maven-failsafe-plugin< /artifactId>
+	< version>3.5.2< /version>
+	< configuration>
+		< argLine>${argLine} --enable-preview< /argLine>
+		< includes>
+			< include>**/*IT.java< /include>
+		< /includes>
+	< /configuration>
+< /plugin>
+
+						</code></pre>
+					</section>					
+					<section>
 						<h3>Other tests</h3>
 						<ul>
 							<li>Mutation testing</li>
@@ -409,10 +482,7 @@
 						</ul>
 					</section>
 				</section>
-
-				<section>
-					<img src="./images/demo.png" width="100%" />
-				</section>		
+	
 				<!-- 		
 				<section>
 					<section>
